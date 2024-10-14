@@ -1,34 +1,36 @@
-// import { SignUp } from '@clerk/nextjs'
+import { SignUp } from '@clerk/nextjs'
 
-// export default function Page() {
-//   return <SignUp />
-// }
+export default function Page() {
+  return(
+<section className="bg-white">
+  <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
+    <aside className="relative block h-16 lg:order-last lg:col-span-5 lg:h-full xl:col-span-6">
+      <img
+        alt=""
+        src="https://i.ibb.co/c3KG3Vv/Screenshot-2024-10-14-at-11-13-44-PM.png"
+        className="absolute inset-2 w-auto h-auto mx-auto my-20 transform translate-y-1/4"
+      />
+    </aside>
 
-"use client";
-import React from "react";
-import { Input } from "../../../components/ui/input"; // Adjusted path
-import { cn } from "../../../lib/utils"; // Adjusted path
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
+    <main
+      className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6"
+    >
+      <div className="max-w-xl lg:max-w-3xl">
+        <a className="block text-blue-600" href="#">
+          <span className="sr-only">Home</span>
+        </a>
 
-export function SignupFormDemo() {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
+        <h1 className="mt-6 text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl">
+        AI-Powered Interview Hub
+        </h1>
 
-  return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">Email</label>
-        <Input id="email" type="email" required />
-        <label htmlFor="password">Password</label>
-        <Input id="password" type="password" required />
-        <button type="submit">Sign Up</button>
-      </form>
-    </div>
-  );
+        <p className="mt-3 leading-relaxed text-gray-500 mb-6">
+        Your ultimate companion for mastering interviews!
+        </p>
+        <SignUp />
+      </div>
+    </main>
+  </div>
+</section>
+  )
 }
